@@ -156,6 +156,11 @@ img {
     margin-right: 10px;
 }
 
+.contacts-list-link:hover .nav-icon {
+    fill: currentColor;
+}
+
+
 /* Головна частина */
 
 .hero {
