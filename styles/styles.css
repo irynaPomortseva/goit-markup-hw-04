@@ -156,7 +156,8 @@ img {
     margin-right: 10px;
 }
 
-.contacts-list-link:hover .nav-icon {
+.contacts-list-link:hover .nav-icon,
+.contacts-list-link:focus .nav-icon {
     fill: currentColor;
 }
 
