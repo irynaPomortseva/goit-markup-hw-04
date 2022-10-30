@@ -6,6 +6,7 @@
     --accent-color: #2196F3;
     --hover-btn-color: #188CE8;
     --nav-list-color: #000000;
+    --background: #C4C4C4;
     --secondary-bgc: #2F303A;
     --filter-btn-color: #F5F4FA;
     --address-list-color:
@@ -15,11 +16,12 @@
     --header-border: #ECECEC;
     --main-margin: 30px;
     --address-link: rgba(255, 255, 255, 0.6);
+    --social-icon: #AFB1B8;
 }
 
 body {
     font-family: var(--primary-font-family);
-    color: var(--address-list-color);
+    color: var(--accent-color);
     letter-spacing: 0.3em;
 }
 
@@ -125,6 +127,8 @@ img {
 }
 
 .contacts-list-link {
+    display: inline-flex;
+    align-items: center;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -141,12 +145,30 @@ img {
     margin-right: 50px;
 }
 
+.contacts-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icon {
+    fill: var(--secondary-text-color);
+    margin-right: 10px;
+}
+
 /* Головна частина */
 
 .hero {
-    background: var(--secondary-bgc);
     padding-top: 200px;
-    padding-bottom: 200px;
+    padding-bottom: 280px;
+    background-image:
+    linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+    ), 
+    url("/img/header-bg-img.jpg");
+    background-size: cover;
+    background-color: var(--background);
 }
 
 .main-title {
@@ -190,6 +212,14 @@ img {
 
 /* Перевага */
 
+.icons {
+    background-color: var(--filter-btn-color);
+    border-radius: 4px;
+    margin-bottom: 30px;
+    padding: 25px 100px;
+
+}
+
 .visually-hidden {
     height: 1px;
     clip-path: inset(100%);
@@ -204,7 +234,6 @@ img {
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
-
 
 .advantage-list {
     display: flex;
@@ -279,14 +308,45 @@ img {
 .our-team-item {
     background: var(--address-list-color);
     flex-basis: calc((100% - 120px) / 4);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+    0px 1px 1px rgba(0, 0, 0, 0.14), 
+    0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
     margin-left: var(--main-margin);
     margin-top: var(--main-margin);
 }
 
-.hghhg {
-    padding: 30px 61px;
+.team-card {
+    padding: 30px 32px 30px 32px;
+}
+
+.social-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-list-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--address-list-color);
+    border-radius: 50%;
+}
+
+.social-list-icon {
+    fill: var(--social-icon);
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+    background-color: var(--accent-color) ;
+}
+
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+    fill: var(--address-list-color);
 }
 
 .secondary-title {
@@ -309,26 +369,52 @@ img {
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--secondary-text-color);
+    margin-bottom: 16px;
 }
 
-/* Footer */
+/* Постійні клієнти */
+
+.our-clients-list {
+    display: flex;
+    gap: 30px;
+}
+
+.clients-list-link {
+    fill: var(--social-icon);
+}
+
+.our-clients-item {
+    border: 1px solid var(--social-icon);
+    border-radius: 4px;
+    padding: 16px 32px;
+    cursor: pointer;
+}
+
+.our-clients-item:hover,
+.our-clients-item:focus {
+    border-color: var(--accent-color);
+}
+
+.our-clients-item:hover .clients-list-icon,
+.our-clients-item:focus 
+.clients-list-icon
+{
+    fill: var(--accent-color);  
+}
+
+/* NEW FOOTER */
 
 .footer {
     background: var(--secondary-bgc);
     padding-top: 60px;
     padding-bottom: 60px;
+    
 }
 
-.address-link {
-    font-style: normal;
-    font-size: 14px;
-    line-height: 1.7;
-    letter-spacing: 0.03em;
-    color: var(--address-link);
-}
-
-.footer-map-link {
-    color: var(--address-list-color);
+.footer-item {
+    display: flex;
+    align-items: center;
+    align-items: baseline;
 }
 
 .footer-logo {
@@ -343,14 +429,66 @@ img {
     margin-bottom: 10px;
 }
 
+.address-link {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    color: var(--address-link);
+    margin-right: 94px;
+}
+
+.footer-map-link {
+    color: var(--address-list-color);
+}
+
+.join-us {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--address-list-color);
+    margin-bottom: 20px;
+}
+
+.footer-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-list-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.footer-list-icon {
+    fill:var(--address-list-color);
+}
+
+.footer-list-link:hover,
+.footer-list-link:focus {
+    background-color: var(--accent-color) ;
+}
+
+.footer-list-link:hover .footer-list-icon,
+.footer-list-link:focus .footer-list-icon {
+    fill: var(--address-list-color);
+}
+
+
 /* Portfolio */
 .line {
     border-bottom: 1px solid var(--header-border);
 }
 
 .filter-btn {
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.62;
@@ -367,18 +505,17 @@ img {
     margin-bottom: 50px;
 }
 
-
 .filter-btn:hover,
 .filter-btn:focus {
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.62;
     color: var(--address-list-color);
     background-color:var(--accent-color);
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-border-radius: 4px;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 
+    0px 1px 2px rgba(0, 0, 0, 0.08), 
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
 }
 
 .projects-name {
@@ -423,10 +560,16 @@ border-radius: 4px;
     justify-content: center;
 }
 
+.projects-item:hover {
+    box-shadow: 
+    0px 1px 1px rgba(0, 0, 0, 0.12), 
+    0px 4px 4px rgba(0, 0, 0, 0.06), 
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 /* Ends of Portfolio */
 
 .active-page {
     color: var(--accent-color);
 }
-
 
