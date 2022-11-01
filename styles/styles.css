@@ -409,8 +409,8 @@ img {
 
 .clients-list-link:hover,
 .clients-list-link:focus {
-    fill: #188CE8;
-    border-color: #188CE8;
+    fill: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 /* NEW FOOTER */
